@@ -5,13 +5,13 @@ Click the green 'Code' button, then select download code
     3. Browse to the folder that contains the CMakeLists.txt file and click 'Select Folder'.
     4. Visual Studio will detect and load the CMake project automatically.
     5. Wait for the message 'CMake generation finished' to appear in the Output window.
-  Configuring the Build Settings
+  Configuring the Build Settings:
     1.In the Visual Studio toolbar, find the configuration dropdown menus.
     2. Set 'Configuration' to Release (or Debug for development).
     3. Set 'Platform' to x64.
     4. If the options are unavailable, go to 'Manage Configurations' and enable 'x64-Release'.
     5. Visual Studio will regenerate the CMake build system for the chosen configuration.
-  Building the Project.
+  Building the Project:
     1. In Visual Studio, open the menu Build → Build All (or press Ctrl + Shift + B).
     2. Wait until the build completes successfully with the message:
        '========== Build: 1 succeeded, 0 failed =========='
