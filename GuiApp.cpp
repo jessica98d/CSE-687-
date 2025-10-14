@@ -17,16 +17,16 @@ static HFONT monoFont = (HFONT)GetStockObject(ANSI_FIXED_FONT);
 using namespace std;
 namespace fs = std::filesystem;
 
-// ---------- Settings (change if you like) ----------
+
 static const char* kInputDir  = "./sample_input";
 static const char* kTempDir   = "./temp";
 static const char* kOutputDir = "./output";
 
-// ---------- Globals ----------
+
 static HWND  gEdit  = nullptr;
 static HFONT gFont  = nullptr;
 
-// Parse output files (e.g., "word\tcount") into a vector sorted by word.
+
 static vector<pair<string,int>> readWordCountsFromOutput(const string& outDir)
 {
     unordered_map<string,int> agg;
