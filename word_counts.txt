@@ -1,0 +1,14 @@
+count	1
+counts	1
+cse	1
+hello	2
+is	1
+map	2
+mapreduce	2
+phase	1
+reduce	2
+syracuse	1
+this	1
+word	1
+words	1
+world	1
