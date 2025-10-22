@@ -142,6 +142,5 @@ out/install/bin/
 ---
 
 ## 👩🏽‍💻 Authors
-**Jessica, Taylor and Taylor**  
-Graduate Student, Syracuse University  
-CSE 687 — Object Oriented Design
+**Jessica, Michael and Taylor**  
+
