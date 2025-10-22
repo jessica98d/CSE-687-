@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "mapreduce_gui",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "mapreduce_cli::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mapreduce_cli-Release-7dbe524091204acabee5.json",
+					"name" : "mapreduce_cli",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mapreduce_gui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mapreduce_gui-Release-d57d511bb49dae78f96f.json",
+					"name" : "mapreduce_gui",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-/out/build/x64-Debug",
+		"source" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

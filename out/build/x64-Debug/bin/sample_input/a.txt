@@ -1,0 +1,2 @@
+Hello, world! Hello Syracuse.
+This is CSE-687, MapReduce Phase 1.
