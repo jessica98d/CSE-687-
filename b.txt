@@ -1,2 +1,0 @@
-Map reduce map-reduce MAPREDUCE.
-Word count counts words.

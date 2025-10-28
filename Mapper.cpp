@@ -6,41 +6,31 @@
 namespace mr {
 
 Mapper::Mapper(FileManager& fm, const std::string& tempDir, std::size_t flushThreshold)
-    : fileManager_(fm), tempDir_(tempDir), buffer_(), flushThreshold_(flushThreshold) {}
+    : fileManager_(fm), tempDir_(tempDir), flushThreshold_(flushThreshold) {}
 
-void Mapper::map(const std::string& /*fileName*/, const std::string& line) {
-    // normalize: lowercase; non-letters -> space
+void Mapper::map(const std::string&, const std::string& line) {
     std::string cleaned = line;
     for (char& c : cleaned) {
         unsigned char uc = static_cast<unsigned char>(c);
-        if (std::isalpha(uc)) {
-            c = static_cast<char>(std::tolower(uc));
-        } else {
-            c = ' ';
-        }
+        c = std::isalpha(uc) ? static_cast<char>(std::tolower(uc)) : ' ';
     }
 
     std::istringstream iss(cleaned);
     std::string token;
     while (iss >> token) {
-        if (!token.empty()) {
-            buffer_.push_back({ token, 1 });
-            if (buffer_.size() >= flushThreshold_) flushInternal();
-        }
+        buffer_.push_back({token, 1});
+        if (buffer_.size() >= flushThreshold_) exportKV();
     }
 }
 
-void Mapper::flush() {
-    flushInternal();
-}
+void Mapper::flush() { exportKV(); }
 
-void Mapper::flushInternal() {
+void Mapper::exportKV() {
     if (buffer_.empty()) return;
     fileManager_.ensureDir(tempDir_);
     const std::string tmpPath = tempDir_ + "/intermediate.txt";
-    for (const auto& kv : buffer_) {
+    for (const auto& kv : buffer_)
         fileManager_.appendLine(tmpPath, kv.first + "\t" + std::to_string(kv.second));
-    }
     buffer_.clear();
 }
 
