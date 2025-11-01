@@ -1,4 +1,4 @@
-#include "Reducer.hpp"
+#include "mr/Reducer.hpp"
 #include <numeric>
 
 namespace mr {

@@ -4,13 +4,12 @@
 #include <filesystem>
 #include <fstream>
 #include <unordered_map>
-#include "FileManager.hpp"
-#include "Workflow.hpp"
+#include "mr/FileManager.hpp"
+#include "mr/Workflow.hpp"
 #include <windows.h>
 #include <sstream>
 #include <iomanip>
-#include "Workflow.hpp"
-#include "FileManager.hpp"
+
 
 static HFONT monoFont = (HFONT)GetStockObject(ANSI_FIXED_FONT);
 

@@ -142,5 +142,8 @@ out/install/bin/
 ---
 
 ## 👩🏽‍💻 Authors
-**Jessica, Michael and Taylor**  
+**Jessica, Michael and Taylor**
 
+---
+
+_Last updated: 2025-11-01 13:23:54_

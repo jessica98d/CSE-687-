@@ -16,7 +16,9 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2,
+						3
 					]
 				}
 			],
@@ -32,7 +34,9 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2,
+						3
 					]
 				}
 			],
@@ -40,15 +44,29 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "Map::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Map-Release-a5a668d2227fbb7205a5.json",
+					"name" : "Map",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Reduce::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Reduce-Release-cff2ccc14e5548c63b3d.json",
+					"name" : "Reduce",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "mapreduce_cli::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mapreduce_cli-Release-7dbe524091204acabee5.json",
+					"jsonFile" : "target-mapreduce_cli-Release-29ed34450f80dc1e87a3.json",
 					"name" : "mapreduce_cli",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "mapreduce_gui::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mapreduce_gui-Release-d57d511bb49dae78f96f.json",
+					"jsonFile" : "target-mapreduce_gui-Release-1b0e5fc612f7f0b42793.json",
 					"name" : "mapreduce_gui",
 					"projectIndex" : 0
 				}
@@ -58,8 +76,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-/out/build/x64-Debug",
-		"source" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-"
+		"build" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/build/x64-Debug",
+		"source" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-"
 	},
 	"version" : 
 	{

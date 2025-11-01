@@ -1,4 +1,4 @@
-#include "Mapper.hpp"
+#include "mr/Mapper.hpp"
 #include <algorithm>
 #include <cctype>
 #include <sstream>

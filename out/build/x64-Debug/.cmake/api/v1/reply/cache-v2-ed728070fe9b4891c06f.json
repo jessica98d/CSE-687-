@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-/out/build/x64-Debug"
+			"value" : "c:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/build/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -383,7 +383,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-/out/build/x64-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/build/x64-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -443,7 +443,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -455,7 +455,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-/out/install/x64-Debug"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/install/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -982,18 +982,6 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "Qt6_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for Qt6."
-				}
-			],
-			"type" : "PATH",
-			"value" : "Qt6_DIR-NOTFOUND"
-		},
-		{
 			"name" : "mapreduce_gui_BINARY_DIR",
 			"properties" : 
 			[
@@ -1003,7 +991,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-/out/build/x64-Debug"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/build/x64-Debug"
 		},
 		{
 			"name" : "mapreduce_gui_IS_TOP_LEVEL",
@@ -1027,7 +1015,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-"
 		}
 	],
 	"kind" : "cache",
