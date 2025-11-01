@@ -1,5 +1,5 @@
-#include "Workflow.hpp"
-#include "FileManager.hpp"
+#include "mr/Workflow.hpp"
+#include "mr/FileManager.hpp"
 #include <iostream>
 
 int main(int argc, char** argv) {
