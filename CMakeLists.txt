@@ -51,3 +51,13 @@ add_custom_command(TARGET mapreduce_cli POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:mapreduce_cli>/temp"
     COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:mapreduce_cli>/output"
 )
+# GUI target (Win32)
+add_executable(mapreduce_gui WIN32
+    GuiApp.cpp
+    FileManager.cpp
+    Mapper.cpp
+    Reducer.cpp
+    Workflow.cpp
+)
+target_link_libraries(mapreduce_gui PRIVATE user32 comdlg32 shell32)
+set_target_properties(mapreduce_gui PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
