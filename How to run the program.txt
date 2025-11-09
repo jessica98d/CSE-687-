@@ -1,0 +1,9 @@
+phase2
+.\mapreduce_cli.exe "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#2\CSE-687-\out\build\x64-Debug\bin\sample_input" "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#2\CSE-687-\out\build\x64-Debug\bin" "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#2\CSE-687-\out\build\x64-Debug\bin\output" "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#2\CSE-687-\out\build\x64-Debug\bin\temp"
+
+
+phase1
+.\mapreduce_cli.exe "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#2\CSE-687-\out\build\x64-Debug\bin\sample_input" "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#2\CSE-687-\out\build\x64-Debug\bin\output" "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#2\CSE-687-\out\build\x64-Debug\bin\output"
+
+
+cd "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#2\CSE-687-\out\build\x64-Debug\bin"

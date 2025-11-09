@@ -1,128 +1,192 @@
-// GuiApp.cpp — Win32 GUI for CSE-687 repo (no DLLs required), C++17
-#include <windows.h>
-#include <commdlg.h>
-#include <shlobj.h>
 #include <string>
-#include <fstream>
+#include <vector>
+#include <iomanip>
 #include <filesystem>
+#include <fstream>
+#include <unordered_map>
+#include "mr/FileManager.hpp"
+#include "mr/Workflow.hpp"
+#include <windows.h>
+#include <sstream>
+#include <iomanip>
 
-#include "include/MapReduceInterfaces.h"
-#include "include/Workflow.h"
-#include "include/FileManager.h"
-#include "include/Logger.h"
 
-enum {
-    IDC_EDIT_INPUT = 101, IDC_EDIT_OUTPUT, IDC_BTN_RUN,
-    IDC_RB_TEXT, IDC_RB_FILE, IDC_RB_FOLDER, IDC_BTN_PICKFILE, IDC_BTN_PICKFOLDER
-};
+static HFONT monoFont = (HFONT)GetStockObject(ANSI_FIXED_FONT);
 
-static HFONT gMono = nullptr;
-static const std::string kDefaultInputDir = "./sample_input";
-static mr::Paths g_paths{ kDefaultInputDir, ".", "./out/output", "./out/temp" };
-static std::string g_pick_file, g_pick_folder;
-static int g_mode = 0;
+using namespace std;
+namespace fs = std::filesystem;
 
-static void set_text(HWND h, const std::string& s){ std::wstring ws(s.begin(), s.end()); SetWindowTextW(h, ws.c_str()); }
-static std::string get_text(HWND h){ int L=GetWindowTextLengthW(h); std::wstring ws(L, L'\0'); GetWindowTextW(h, ws.data(), L+1); return std::string(ws.begin(), ws.end()); }
-static std::string slurp(const std::string& p){ std::ifstream in(p, std::ios::binary); return std::string((std::istreambuf_iterator<char>(in)),{}); }
-static void set_text_crlf(HWND h, const std::string& s){ std::string o; o.reserve(s.size()*11/10); for(char c: s) o += (c=='\n')? "\r\n" : std::string(1,c); std::wstring ws(o.begin(), o.end()); SetWindowTextW(h, ws.c_str()); }
 
-static std::string pick_file(HWND h){
-    OPENFILENAMEA ofn{ sizeof(ofn) }; char sz[1024]={0};
-    ofn.hwndOwner=h; ofn.lpstrFilter="Text Files\0*.txt\0All Files\0*.*\0"; ofn.lpstrFile=sz; ofn.nMaxFile=1024;
-    ofn.Flags=OFN_FILEMUSTEXIST|OFN_PATHMUSTEXIST;
-    return GetOpenFileNameA(&ofn)? sz : std::string();
-}
-static std::string pick_folder(HWND h){
-    BROWSEINFOW bi{}; bi.hwndOwner=h; bi.ulFlags=BIF_RETURNONLYFSDIRS|BIF_NEWDIALOGSTYLE;
-    PIDLIST_ABSOLUTE pid=SHBrowseForFolderW(&bi); wchar_t buf[MAX_PATH];
-    if(pid && SHGetPathFromIDListW(pid, buf)){ std::wstring ws(buf); return std::string(ws.begin(), ws.end()); }
-    return {};
-}
-static size_t count_txt(const std::string& dir){
-    namespace fs=std::filesystem; size_t n=0; std::error_code ec;
-    for(auto& e: fs::directory_iterator(dir, ec)) if(e.is_regular_file() && e.path().extension()==".txt") ++n;
-    return n;
-}
+static const char* kInputDir  = "./sample_input";
+static const char* kTempDir   = "./temp";
+static const char* kOutputDir = "./output";
 
-static void run_mapreduce(HWND hIn, HWND hOut, HWND hStatus){
-    set_text(hStatus, "Running...");
-    set_text_crlf(hOut, "");
 
-    FileManager::ensure_dir(g_paths.temp_dir);
-    FileManager::ensure_dir(g_paths.output_dir);
-    FileManager::clear_dir(g_paths.temp_dir);
-    FileManager::clear_dir(g_paths.output_dir);
+static HWND  gEdit  = nullptr;
+static HFONT gFont  = nullptr;
 
-    if(g_mode==0){ // Type Text
-        FileManager::ensure_dir(kDefaultInputDir);
-        FileManager::clear_dir(kDefaultInputDir);
-        std::ofstream(FileManager::join(kDefaultInputDir,"user_input.txt")) << get_text(hIn);
-        g_paths.input_dir = kDefaultInputDir;
-    }else if(g_mode==1){ // Pick File
-        if(g_pick_file.empty()){ set_text(hStatus,"No file selected."); return; }
-        FileManager::ensure_dir(kDefaultInputDir);
-        FileManager::clear_dir(kDefaultInputDir);
-        std::error_code ec;
-        auto dest = FileManager::join(kDefaultInputDir, std::filesystem::path(g_pick_file).filename().string());
-        std::filesystem::copy_file(g_pick_file, dest, std::filesystem::copy_options::overwrite_existing, ec);
-        if(ec){ set_text(hStatus, "Copy failed: "+ec.message()); return; }
-        g_paths.input_dir = kDefaultInputDir;
-    }else{ // Pick Folder
-        if(g_pick_folder.empty()){ set_text(hStatus,"No folder selected."); return; }
-        if(count_txt(g_pick_folder)==0){ set_text(hStatus,"Folder has no .txt files."); return; }
-        g_paths.input_dir = g_pick_folder;
+
+static vector<pair<string,int>> readWordCountsFromOutput(const string& outDir)
+{
+    unordered_map<string,int> agg;
+
+    if (!fs::exists(outDir)) return {};
+
+    for (const auto& entry : fs::directory_iterator(outDir)) {
+        if (!entry.is_regular_file()) continue;
+
+        // Accept .txt and files without extension (some reducers do that)
+        const auto& p = entry.path();
+        if (p.has_extension() && p.extension() != ".txt") continue;
+
+        ifstream in(p);
+        if (!in) continue;
+
+        string line;
+        while (std::getline(in, line)) {
+            if (line.empty()) continue;
+
+            // Expect "word<TAB>count"
+            auto tab = line.find('\t');
+            if (tab == string::npos) {
+                // Accept "word count" too (fallback)
+                tab = line.find(' ');
+            }
+            if (tab == string::npos) continue;
+
+            string w = line.substr(0, tab);
+            string cstr = line.substr(tab + 1);
+
+            // trim spaces
+            auto ltrim = [](string& s){
+                size_t i=0; while (i<s.size() && isspace((unsigned char)s[i])) ++i;
+                s.erase(0,i);
+            };
+            auto rtrim = [](string& s){
+                size_t i=s.size(); while (i>0 && isspace((unsigned char)s[i-1])) --i;
+                s.erase(i);
+            };
+            ltrim(w); rtrim(w); ltrim(cstr); rtrim(cstr);
+
+            try {
+                int c = stoi(cstr);
+                if (!w.empty()) agg[w] += c;
+            } catch (...) {
+                // ignore malformed rows
+            }
+        }
     }
 
-    Logger log(FileManager::join(g_paths.output_dir,"mapreduce.log"));
-    Workflow wf(g_paths, log);
-    bool ok = wf.run();
-
-    set_text(hStatus, ok ? "SUCCESS. Results rendered in the GUI." : "FAILED. See mapreduce.log.");
-    set_text_crlf(hOut, slurp(wf.output_file_path()));
+    vector<pair<string,int>> rows(agg.begin(), agg.end());
+    sort(rows.begin(), rows.end(),
+         [](const auto& a, const auto& b){ return a.first < b.first; });
+    return rows;
 }
 
-static LRESULT CALLBACK WndProc(HWND h, UINT m, WPARAM w, LPARAM l){
-    static HWND hIn,hOut,hRun,hStatus,rbT,rbF,rbD,btnPickFile,btnPickFolder;
-    switch(m){
-    case WM_CREATE:{
-        rbT=CreateWindowW(L"BUTTON",L"Type Text",WS_CHILD|WS_VISIBLE|BS_AUTORADIOBUTTON,10,10,110,20,h,(HMENU)IDC_RB_TEXT,0,0);
-        rbF=CreateWindowW(L"BUTTON",L"Pick File",WS_CHILD|WS_VISIBLE|BS_AUTORADIOBUTTON,130,10,110,20,h,(HMENU)IDC_RB_FILE,0,0);
-        rbD=CreateWindowW(L"BUTTON",L"Pick Folder",WS_CHILD|WS_VISIBLE|BS_AUTORADIOBUTTON,250,10,120,20,h,(HMENU)IDC_RB_FOLDER,0,0);
-        SendMessage(rbT,BM_SETCHECK,BST_CHECKED,0);
+static void setEditText(const std::string& s) {
+    SetWindowTextA(gEdit, s.c_str());
+}
 
-        hIn=CreateWindowW(L"EDIT",L"",WS_CHILD|WS_VISIBLE|WS_BORDER|ES_LEFT|ES_MULTILINE|ES_AUTOVSCROLL|WS_VSCROLL,10,40,610,200,h,(HMENU)IDC_EDIT_INPUT,0,0);
-        btnPickFile=CreateWindowW(L"BUTTON",L"Pick File...",WS_CHILD|WS_VISIBLE,640,40,140,28,h,(HMENU)IDC_BTN_PICKFILE,0,0);
-        btnPickFolder=CreateWindowW(L"BUTTON",L"Pick Folder...",WS_CHILD|WS_VISIBLE,640,78,140,28,h,(HMENU)IDC_BTN_PICKFOLDER,0,0);
-        hRun=CreateWindowW(L"BUTTON",L"Run MapReduce",WS_CHILD|WS_VISIBLE,10,248,160,30,h,(HMENU)IDC_BTN_RUN,0,0);
-        hStatus=CreateWindowW(L"STATIC",L" ",WS_CHILD|WS_VISIBLE,180,250,600,26,h,0,0,0);
-        hOut=CreateWindowW(L"EDIT",L"",WS_CHILD|WS_VISIBLE|WS_BORDER|ES_LEFT|ES_MULTILINE|ES_READONLY|WS_VSCROLL|WS_HSCROLL|ES_AUTOVSCROLL|ES_AUTOHSCROLL,10,290,770,260,h,(HMENU)IDC_EDIT_OUTPUT,0,0);
-        gMono = CreateFontW(-18,0,0,0,FW_NORMAL,FALSE,FALSE,FALSE,ANSI_CHARSET,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,DEFAULT_QUALITY,FF_DONTCARE,L"Consolas");
-        SendMessageW(hIn,  WM_SETFONT, (WPARAM)gMono, TRUE);
-        SendMessageW(hOut, WM_SETFONT, (WPARAM)gMono, TRUE);
-        SendMessageW(hOut, EM_SETLIMITTEXT, (WPARAM)-1, 0);
-        break; }
-    case WM_COMMAND:{
-        int id=LOWORD(w);
-        if(id==IDC_RB_TEXT) g_mode=0;
-        else if(id==IDC_RB_FILE) g_mode=1;
-        else if(id==IDC_RB_FOLDER) g_mode=2;
-        else if(id==IDC_BTN_PICKFILE){ auto f=pick_file(h); if(!f.empty()){ g_pick_file=f; g_mode=1; SendMessage(rbF,BM_SETCHECK,BST_CHECKED,0); set_text(hStatus,"Picked file: "+f);} }
-        else if(id==IDC_BTN_PICKFOLDER){ auto d=pick_folder(h); if(!d.empty()){ g_pick_folder=d; g_mode=2; SendMessage(rbD,BM_SETCHECK,BST_CHECKED,0); set_text(hStatus,"Picked folder: "+d);} }
-        else if(id==IDC_BTN_RUN){ run_mapreduce(hIn,hOut,hStatus); }
-        break; }
+
+static void runAndDisplay()
+{
+    mr::FileManager fm;
+    mr::Workflow wf(fm, kInputDir, kTempDir, kOutputDir);
+    wf.run();
+
+    auto rows = readWordCountsFromOutput(kOutputDir);
+
+    std::ostringstream oss;
+    if (rows.empty()) {
+        oss << "No words found (check input files and output folder).\r\n";
+        setEditText(oss.str());
+        return;
+    }
+
+    // Header
+    oss << "+----------------------+-------+\r\n";
+    oss << "| Word                 | Count |\r\n";
+    oss << "+----------------------+-------+\r\n";
+
+    // Body
+    int total = 0;
+    for (const auto& [w, c] : rows) {
+        oss << "| " << std::left << std::setw(20) << w
+            << " | " << std::right << std::setw(5) << c << " |\r\n";
+        total += c;
+    }
+
+    // Footer
+    oss << "+----------------------+-------+\r\n";
+    oss << "| TOTAL WORD COUNT:    | "
+        << std::right << std::setw(5) << total << " |\r\n";
+    oss << "+----------------------+-------+\r\n";
+
+    setEditText(oss.str());
+}
+
+
+
+
+// ---------------- Win32 UI ----------------
+LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+    switch (msg) {
+    case WM_CREATE: {
+        CreateWindowW(L"BUTTON", L"Run MapReduce",
+                      WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,
+                      10, 10, 160, 32, hWnd, (HMENU)1, nullptr, nullptr);
+
+        gEdit = CreateWindowW(L"EDIT", L"",
+                              WS_CHILD | WS_VISIBLE | WS_VSCROLL |
+                              ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY,
+                              10, 50, 940, 630, hWnd, nullptr, nullptr, nullptr);
+
+        // Monospace font (Consolas)
+        gFont = CreateFontW(
+            18, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE,
+            DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY,
+            FIXED_PITCH | FF_MODERN, L"Consolas");
+        SendMessageW(gEdit, WM_SETFONT, (WPARAM)gFont, TRUE);
+        break;
+    }
+    case WM_COMMAND:
+        if (LOWORD(wParam) == 1) {
+            runAndDisplay();
+        }
+        break;
     case WM_DESTROY:
-        if(gMono){ DeleteObject(gMono); gMono=nullptr; }
-        PostQuitMessage(0); break;
-    default: return DefWindowProc(h,m,w,l);
-    } return 0;
+        PostQuitMessage(0);
+        break;
+    default:
+        return DefWindowProc(hWnd, msg, wParam, lParam);
+    }
+    return 0;
 }
 
-int APIENTRY wWinMain(HINSTANCE hi,HINSTANCE,LPWSTR,int nCmd){
-    WNDCLASSW wc{}; wc.lpszClassName=L"MRGUI"; wc.hInstance=hi; wc.lpfnWndProc=WndProc; wc.hbrBackground=(HBRUSH)(COLOR_WINDOW+1);
-    RegisterClassW(&wc);
-    HWND w=CreateWindowW(L"MRGUI",L"MapReduce Phase 2 – Word Count (GUI)",WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,CW_USEDEFAULT,840,640,0,0,hi,0);
-    ShowWindow(w,nCmd);
-    MSG msg; while(GetMessage(&msg,0,0,0)){ TranslateMessage(&msg); DispatchMessage(&msg); }
-    return (int)msg.wParam;
+int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, PWSTR, int nShowCmd)
+{
+    const wchar_t CLASS_NAME[] = L"MRGUIWin32";
+
+    WNDCLASS wc{};
+    wc.lpfnWndProc   = WndProc;
+    wc.hInstance     = hInst;
+    wc.lpszClassName = CLASS_NAME;
+
+    RegisterClass(&wc);
+
+    HWND hWnd = CreateWindowEx(
+        0, CLASS_NAME, L"MapReduce Phase 1 – Word Count (GUI)",
+        WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, CW_USEDEFAULT, 980, 750,
+        nullptr, nullptr, hInst, nullptr);
+
+    ShowWindow(hWnd, nShowCmd);
+
+    MSG msg{};
+    while (GetMessage(&msg, nullptr, 0, 0)) {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+    return 0;
 }

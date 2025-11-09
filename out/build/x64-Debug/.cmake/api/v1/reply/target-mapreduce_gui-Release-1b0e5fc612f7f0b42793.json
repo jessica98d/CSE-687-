@@ -15,6 +15,7 @@
 		[
 			"add_executable",
 			"target_link_libraries",
+			"add_custom_command",
 			"target_compile_options",
 			"add_definitions",
 			"include_directories"
@@ -31,31 +32,37 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 22,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 24,
+				"line" : 35,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 35,
+				"line" : 79,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 9,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
 				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 18,
 				"parent" : 0
 			}
 		]
@@ -69,34 +76,34 @@
 					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"fragment" : "/W3"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"fragment" : "/MP"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"fragment" : "/permissive-"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"define" : "UNICODE"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"define" : "_UNICODE"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
-					"path" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#1/CSE-687-/include"
+					"backtrace" : 6,
+					"path" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/include"
 				}
 			],
 			"language" : "CXX",
@@ -116,6 +123,17 @@
 				3,
 				4
 			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "Map::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "Reduce::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "mapreduce_gui::@6890427a1f51a3e7e1df",
