@@ -1,37 +1,35 @@
-#pragma once
+#ifndef FILEMANAGER_H
+#define FILEMANAGER_H
+
 #include <string>
 #include <vector>
+#include <filesystem>
+#include <utility>
 
-namespace mr {
-
-// ------------------------------------------------------------------
-// FileManager: encapsulates all file and directory operations.
-// ------------------------------------------------------------------
 class FileManager {
 public:
-    // Ensuring that the directory exists; create it in case it's missing.
-    void ensureDir(const std::string& dir);
+    explicit FileManager(const std::string& rootDirectory);
 
-    // Checking for the existence of a file or directory
-    bool exists(const std::string& path);
+    // If rootDirectory is a directory, returns all .txt files inside.
+    // If it is a single file, returns a vector containing just that file.
+    std::vector<std::filesystem::path> listTextFiles() const;
 
-    // entire string to a file (truncates existing contents).
-    void writeAll(const std::string& path, const std::string& data);
+    // Read all lines from a text file.
+    std::vector<std::string> readAllLines(const std::filesystem::path& filePath) const;
 
-    // Appending a single line to a file and create directories if needed
-    void appendLine(const std::string& path, const std::string& line);
+    // Make sure a directory (and its parents) exist.
+    void ensureDirectory(const std::filesystem::path& dir) const;
 
-    // Reading all lines from text file into a vector
-    std::vector<std::string> readAllLines(const std::string& path);
+    // Write (word, count) pairs as CSV to an output file.
+    void writeWordCounts(
+        const std::string& outputFile,
+        const std::vector<std::pair<std::string, std::size_t>>& wordCounts
+    ) const;
 
-    // Listings all the files in a given or determined directory
-    std::vector<std::string> listFiles(const std::string& dir);
+    const std::string& getRootDirectory() const;
 
-    // Creating an empty file to be used for the SUCCESS MARKER
-    bool writeEmptyFile(const std::string& path);
-
-    // Listing only text files (*.txt or no extension) in a directory.
-    std::vector<std::string> listTextFiles(const std::string& dir);
+private:
+    std::string rootDirectory;
 };
 
-} // namespace mr
+#endif // FILEMANAGER_H
