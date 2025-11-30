@@ -1,25 +1,18 @@
-#pragma once
-#include "FileManager.hpp"
+#ifndef REDUCER_H
+#define REDUCER_H
+
 #include <string>
 #include <vector>
 #include <utility>
-
-namespace mr {
-
-using Word = std::string;
-using Count = int;
+#include <map>
 
 class Reducer {
 public:
-    Reducer(FileManager& fm, const std::string& outputDir);
-    void reduce(const Word& word, const std::vector<Count>& counts); // compute only
-    void exportResult(const Word& word, int total);                  // file IO
-    void markSuccess();
+    Reducer() = default;
 
-private:
-    FileManager& fileManager_;
-    std::string outputDir_;
-    std::string outFilePath_;
+    // Aggregates all (word, 1) pairs into (word, totalCount).
+    std::vector<std::pair<std::string, std::size_t>> reduce(
+        const std::vector<std::pair<std::string, int>>& mappedPairs) const;
 };
 
-} // namespace mr
+#endif // REDUCER_H
