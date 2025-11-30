@@ -2,13 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "bin/Reduce.dll"
+			"path" : "bin/mapper_worker.exe"
 		},
 		{
-			"path" : "Reduce.lib"
-		},
-		{
-			"path" : "bin/Reduce.pdb"
+			"path" : "bin/mapper_worker.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -16,7 +13,7 @@
 	{
 		"commands" : 
 		[
-			"add_library",
+			"add_executable",
 			"add_definitions",
 			"include_directories"
 		],
@@ -32,7 +29,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 64,
+				"line" : 131,
 				"parent" : 0
 			},
 			{
@@ -61,9 +58,6 @@
 			"defines" : 
 			[
 				{
-					"define" : "Reduce_EXPORTS"
-				},
-				{
 					"backtrace" : 2,
 					"define" : "UNICODE"
 				},
@@ -76,7 +70,7 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/include"
+					"path" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/include"
 				}
 			],
 			"language" : "CXX",
@@ -90,17 +84,25 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3,
+				4
 			]
 		}
 	],
-	"id" : "Reduce::@6890427a1f51a3e7e1df",
+	"id" : "mapper_worker::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/machine:x64 /INCREMENTAL:NO",
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
 				"role" : "flags"
 			},
 			{
@@ -110,8 +112,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Reduce",
-	"nameOnDisk" : "Reduce.dll",
+	"name" : "mapper_worker",
+	"nameOnDisk" : "mapper_worker.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -123,7 +125,11 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3,
+				4
 			]
 		}
 	],
@@ -132,9 +138,33 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "dlls/ReduceDLL.cpp",
+			"path" : "mapper_worker.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "FileManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Mapper.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Reducer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Workflow.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "EXECUTABLE"
 }

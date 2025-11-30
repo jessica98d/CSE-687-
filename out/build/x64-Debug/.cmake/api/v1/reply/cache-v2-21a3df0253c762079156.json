@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/build/x64-Debug"
+			"value" : "c:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -123,10 +123,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx86/x64/cl.exe"
 		},
 		{
@@ -383,7 +383,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/build/x64-Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -443,7 +443,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -455,7 +455,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/install/x64-Debug"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/install/x64-Debug"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -991,7 +991,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-/out/build/x64-Debug"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug"
 		},
 		{
 			"name" : "mapreduce_gui_IS_TOP_LEVEL",
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#2/CSE-687-"
+			"value" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-"
 		}
 	],
 	"kind" : "cache",
