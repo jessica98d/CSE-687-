@@ -1,26 +1,24 @@
-#include "mr/Reducer.hpp"
-#include <numeric>
+#include "Reducer.h"
 
-namespace mr {
+std::vector<std::pair<std::string, std::size_t>> Reducer::reduce(
+    const std::vector<std::pair<std::string, int>>& mappedPairs) const {
 
-Reducer::Reducer(FileManager& fm, const std::string& outputDir)
-    : fileManager_(fm), outputDir_(outputDir) {
-    fileManager_.ensureDir(outputDir_);
-    outFilePath_ = outputDir_ + "/word_counts.txt";
-    fileManager_.writeAll(outFilePath_, ""); // truncate previous output
+    std::map<std::string, std::size_t> accumulator;
+
+    for (const auto& pair : mappedPairs) {
+        const std::string& word = pair.first;
+        int value = pair.second;
+        if (value != 0) {
+            accumulator[word] += static_cast<std::size_t>(value);
+        }
+    }
+
+    std::vector<std::pair<std::string, std::size_t>> result;
+    result.reserve(accumulator.size());
+
+    for (const auto& entry : accumulator) {
+        result.emplace_back(entry.first, entry.second);
+    }
+
+    return result;
 }
-
-void Reducer::reduce(const Word& word, const std::vector<Count>& counts) {
-    int total = std::accumulate(counts.begin(), counts.end(), 0);
-    exportResult(word, total);
-}
-
-void Reducer::exportResult(const Word& word, int total) {
-    fileManager_.appendLine(outFilePath_, word + "\t" + std::to_string(total));
-}
-
-void Reducer::markSuccess() {
-    fileManager_.writeEmptyFile(outputDir_ + "/SUCCESS"); // empty file 
-}
-
-} // namespace mr

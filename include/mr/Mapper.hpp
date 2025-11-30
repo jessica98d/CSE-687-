@@ -1,23 +1,19 @@
-#pragma once
-#include "FileManager.hpp"
+#ifndef MAPPER_H
+#define MAPPER_H
+
 #include <string>
 #include <vector>
 #include <utility>
 
-namespace mr {
-
 class Mapper {
 public:
-    Mapper(FileManager& fm, const std::string& tempDir, std::size_t flushThreshold);
-    void map(const std::string& fileName, const std::string& line);
-    void flush();
-    void exportKV(); // per spec: export intermediate key-value pairs
+    Mapper() = default;
+
+    // Breaks a line into normalized (lowercase, alnum-only) word tokens.
+    std::vector<std::pair<std::string, int>> mapLine(const std::string& line) const;
 
 private:
-    FileManager& fileManager_;
-    std::string tempDir_;
-    std::vector<std::pair<std::string, int>> buffer_;
-    std::size_t flushThreshold_;
+    static bool isWordCharacter(char c);
 };
 
-} // namespace mr
+#endif // MAPPER_H
