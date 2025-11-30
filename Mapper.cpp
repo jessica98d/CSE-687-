@@ -1,37 +1,30 @@
-#include "mr/Mapper.hpp"
-#include <algorithm>
+#include "Mapper.h"
+
 #include <cctype>
-#include <sstream>
 
-namespace mr {
-
-Mapper::Mapper(FileManager& fm, const std::string& tempDir, std::size_t flushThreshold)
-    : fileManager_(fm), tempDir_(tempDir), flushThreshold_(flushThreshold) {}
-
-void Mapper::map(const std::string&, const std::string& line) {
-    std::string cleaned = line;
-    for (char& c : cleaned) {
-        unsigned char uc = static_cast<unsigned char>(c);
-        c = std::isalpha(uc) ? static_cast<char>(std::tolower(uc)) : ' ';
-    }
-
-    std::istringstream iss(cleaned);
-    std::string token;
-    while (iss >> token) {
-        buffer_.push_back({token, 1});
-        if (buffer_.size() >= flushThreshold_) exportKV();
-    }
+bool Mapper::isWordCharacter(char c) {
+    return static_cast<bool>(std::isalnum(static_cast<unsigned char>(c)));
 }
 
-void Mapper::flush() { exportKV(); }
+std::vector<std::pair<std::string, int>> Mapper::mapLine(const std::string& line) const {
+    std::vector<std::pair<std::string, int>> pairs;
+    std::string current;
 
-void Mapper::exportKV() {
-    if (buffer_.empty()) return;
-    fileManager_.ensureDir(tempDir_);
-    const std::string tmpPath = tempDir_ + "/intermediate.txt";
-    for (const auto& kv : buffer_)
-        fileManager_.appendLine(tmpPath, kv.first + "\t" + std::to_string(kv.second));
-    buffer_.clear();
+    for (char c : line) {
+        if (isWordCharacter(c)) {
+            current.push_back(static_cast<char>(std::tolower(static_cast<unsigned char>(c))));
+        } else {
+            if (!current.empty()) {
+                pairs.emplace_back(current, 1);
+                current.clear();
+            }
+        }
+    }
+
+    if (!current.empty()) {
+        pairs.emplace_back(current, 1);
+    }
+
+    return pairs;
 }
 
-} // namespace mr
