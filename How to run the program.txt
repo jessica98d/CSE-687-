@@ -1,4 +1,4 @@
-Phase3 
+Phase3 - new ****
 cd "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug\bin"
 
 mapreduce_phase3.exe 3 2 sample_input intermediate output
