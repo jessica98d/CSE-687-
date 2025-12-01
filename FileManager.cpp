@@ -1,93 +1,66 @@
-#include "FileManager.h"
-
+#include "mr/FileManager.hpp"
+#include <filesystem>
 #include <fstream>
-#include <iostream>
-#include <algorithm>
 
-FileManager::FileManager(const std::string& rootDirectoryIn)
-    : rootDirectory(rootDirectoryIn) {
+namespace fs = std::filesystem;
+
+namespace mr {
+
+void FileManager::ensureDir(const std::string& dir) {
+    fs::create_directories(dir);
 }
 
-std::vector<std::filesystem::path> FileManager::listTextFiles() const {
-    std::vector<std::filesystem::path> results;
-
-    std::filesystem::path rootPath(rootDirectory);
-
-    // If the path is a single existing file, just return it.
-    if (std::filesystem::exists(rootPath) && std::filesystem::is_regular_file(rootPath)) {
-        results.push_back(rootPath);
-        return results;
-    }
-
-    // Otherwise, it must be a directory.
-    if (!std::filesystem::exists(rootPath) || !std::filesystem::is_directory(rootPath)) {
-        std::cerr << "Input path does not exist or is not a directory: "
-                  << rootDirectory << "\n";
-        return results;
-    }
-
-    for (const auto& entry : std::filesystem::directory_iterator(rootPath)) {
-        if (entry.is_regular_file()) {
-            auto path = entry.path();
-            if (path.extension() == ".txt") {
-                results.push_back(path);
-            }
-        }
-    }
-
-    std::sort(results.begin(), results.end());
-    return results;
+bool FileManager::exists(const std::string& path) {
+    return fs::exists(path);
 }
 
-std::vector<std::string> FileManager::readAllLines(const std::filesystem::path& filePath) const {
+void FileManager::writeAll(const std::string& path, const std::string& data) {
+    ensureDir(fs::path(path).parent_path().string());
+    std::ofstream out(path, std::ios::trunc);
+    out << data;
+}
+
+void FileManager::appendLine(const std::string& path, const std::string& line) {
+    ensureDir(fs::path(path).parent_path().string());
+    std::ofstream out(path, std::ios::app);
+    out << line << "\n";
+}
+
+std::vector<std::string> FileManager::readAllLines(const std::string& path) {
     std::vector<std::string> lines;
-    std::ifstream in(filePath);
-    if (!in.is_open()) {
-        std::cerr << "Failed to open file for reading: " << filePath << "\n";
-        return lines;
-    }
-
+    std::ifstream in(path);
     std::string line;
-    while (std::getline(in, line)) {
+    while (std::getline(in, line))
         lines.push_back(line);
-    }
-
     return lines;
 }
 
-void FileManager::ensureDirectory(const std::filesystem::path& dir) const {
-    if (dir.empty()) {
-        return;
+std::vector<std::string> FileManager::listFiles(const std::string& dir) {
+    std::vector<std::string> files;
+    if (!exists(dir)) return files;
+    for (const auto& entry : fs::directory_iterator(dir)) {
+        if (entry.is_regular_file())
+            files.push_back(entry.path().string());
     }
-    if (!std::filesystem::exists(dir)) {
-        std::error_code ec;
-        std::filesystem::create_directories(dir, ec);
-        if (ec) {
-            std::cerr << "Failed to create directory: " << dir
-                      << " error: " << ec.message() << "\n";
-        }
-    }
+    return files;
 }
 
-void FileManager::writeWordCounts(
-    const std::string& outputFile,
-    const std::vector<std::pair<std::string, std::size_t>>& wordCounts
-) const {
-    std::ofstream out(outputFile);
-    if (!out.is_open()) {
-        std::cerr << "Failed to open output file for writing: "
-                  << outputFile << "\n";
-        return;
-    }
-
-    for (const auto& pair : wordCounts) {
-        out << pair.first << "," << pair.second << "\n";
-    }
-
-    std::cout << "Wrote " << wordCounts.size()
-              << " word counts to " << outputFile << "\n";
+bool FileManager::writeEmptyFile(const std::string& path) {
+    ensureDir(fs::path(path).parent_path().string());
+    std::ofstream out(path, std::ios::trunc | std::ios::binary);
+    return static_cast<bool>(out);
 }
 
-const std::string& FileManager::getRootDirectory() const {
-    return rootDirectory;
+std::vector<std::string> FileManager::listTextFiles(const std::string& dir) {
+    std::vector<std::string> out;
+    if (!exists(dir)) return out;
+    for (const auto& e : fs::directory_iterator(dir)) {
+        if (!e.is_regular_file()) continue;
+        const auto& p = e.path();
+        if (!p.has_extension() || p.extension() == ".txt")
+            out.push_back(p.string());
+    }
+    return out;
 }
+
+} // namespace mr
