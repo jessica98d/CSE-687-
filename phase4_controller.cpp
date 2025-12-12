@@ -1,10 +1,11 @@
-// phase4_controller.cpp (replace your phase3_main.cpp for Phase 4)
+// phase4_controller.cpp (Phase 4)
 // Usage:
-//   mapreduce_phase3.exe <inputDir> <tempDir> <outputDir> <stubHost:port>[,<stubHost:port>...] [mappers] [reducers]
+//   mapreduce_phase4 <inputDir> <tempDir> <outputDir> <stubHost:port>[,<stubHost:port>...] [mappers] [reducers]
 // Example:
-//   mapreduce_phase3.exe sample_input temp output 127.0.0.1:5001 2 2
+//   mapreduce_phase4 sample_input temp output 127.0.0.1:5001 2 2
 
 #define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
 #include <windows.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
@@ -12,11 +13,11 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
-#include <map>
 #include <string>
 #include <vector>
 #include <sstream>
 #include <algorithm>
+#include <cstring>   // strlen
 
 #pragma comment(lib, "Ws2_32.lib")
 namespace fs = std::filesystem;
@@ -50,6 +51,7 @@ static bool writeManifest(const fs::path& manifestPath, const std::vector<fs::pa
 
 static bool tcpSendLine(const std::string& host, int port, const std::string& line, std::string& response) {
     response.clear();
+
     addrinfo hints{}, *res = nullptr;
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_STREAM;
@@ -71,8 +73,9 @@ static bool tcpSendLine(const std::string& host, int port, const std::string& li
     send(s, payload.c_str(), (int)payload.size(), 0);
 
     char buf[2048];
-    int n = recv(s, buf, sizeof(buf)-1, 0);
-    if (n > 0) { buf[n]=0; response = buf; }
+    int n = recv(s, buf, (int)sizeof(buf) - 1, 0);
+    if (n > 0) { buf[n] = 0; response = buf; }
+
     closesocket(s);
     return true;
 }
@@ -81,6 +84,8 @@ static bool tcpSendLine(const std::string& host, int port, const std::string& li
 // Minimal implementation: accept, read HELLO, immediately send BEGIN.
 static SOCKET startHeartbeatServer(int port) {
     SOCKET listenSock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (listenSock == INVALID_SOCKET) return INVALID_SOCKET;
+
     sockaddr_in addr{};
     addr.sin_family = AF_INET;
     addr.sin_port = htons((u_short)port);
@@ -94,7 +99,7 @@ static SOCKET startHeartbeatServer(int port) {
 int main(int argc, char** argv) {
     if (argc < 5) {
         std::cerr << "Usage:\n"
-                  << "  mapreduce_phase3 <inputDir> <tempDir> <outputDir> <stubHost:port>[,...] [mappers] [reducers]\n";
+                  << "  mapreduce_phase4 <inputDir> <tempDir> <outputDir> <stubHost:port>[,...] [mappers] [reducers]\n";
         return 1;
     }
 
@@ -106,7 +111,6 @@ int main(int argc, char** argv) {
     int numMappers  = (argc >= 6) ? std::max(1, std::stoi(argv[5])) : 2;
     int numReducers = (argc >= 7) ? std::max(1, std::stoi(argv[6])) : 2;
 
-    // Predefined stub list maintained in config (here: CLI arg) :contentReference[oaicite:8]{index=8}
     auto stubSpecs = split(stubsCsv, ',');
 
     WSADATA wsa{};
@@ -118,6 +122,7 @@ int main(int argc, char** argv) {
     auto inputs = listTextFiles(inputDir);
     if (inputs.empty()) {
         std::cerr << "[controller] No input files found.\n";
+        WSACleanup();
         return 1;
     }
 
@@ -126,11 +131,11 @@ int main(int argc, char** argv) {
     for (size_t i = 0; i < inputs.size(); ++i)
         assigns[i % numMappers].push_back(inputs[i]);
 
-    // Heartbeat server port (controller listens here); pick a reasonable constant
-    const int controllerPort = 6001; // k seconds chosen in workers (e.g., 2s)
+    const int controllerPort = 6001;
     SOCKET hbListen = startHeartbeatServer(controllerPort);
     if (hbListen == INVALID_SOCKET) {
         std::cerr << "[controller] Failed to open heartbeat server.\n";
+        WSACleanup();
         return 1;
     }
     std::cout << "[controller] Heartbeat server listening on port " << controllerPort << "\n";
@@ -142,11 +147,13 @@ int main(int argc, char** argv) {
         return {host, port};
     };
 
-    // ------------- Tell stubs to SPAWN mappers -------------
+    // Tell stubs to SPAWN mappers
     for (int m = 0; m < numMappers; ++m) {
         fs::path manifest = tempDir / ("mapper_input_" + std::to_string(m) + ".txt");
         if (!writeManifest(manifest, assigns[m])) {
             std::cerr << "[controller] Failed to write manifest.\n";
+            closesocket(hbListen);
+            WSACleanup();
             return 1;
         }
 
@@ -159,35 +166,34 @@ int main(int argc, char** argv) {
         std::string resp;
         if (!tcpSendLine(host, port, cmd.str(), resp)) {
             std::cerr << "[controller] Stub unreachable: " << host << ":" << port << "\n";
+            closesocket(hbListen);
+            WSACleanup();
             return 1;
         }
         std::cout << "[controller] Stub response: " << resp;
     }
 
-    // Accept mapper HELLO connections and send BEGIN
+    // Accept mapper HELLO and send BEGIN
     int mapperBegun = 0;
     while (mapperBegun < numMappers) {
         SOCKET s = accept(hbListen, nullptr, nullptr);
         if (s == INVALID_SOCKET) continue;
 
         char buf[1024];
-        int n = recv(s, buf, sizeof(buf)-1, 0);
+        int n = recv(s, buf, (int)sizeof(buf) - 1, 0);
         if (n > 0) {
-            buf[n]=0;
+            buf[n] = 0;
             std::string msg(buf);
-            if (msg.find("HELLO|MAP|") == 0) {
+            if (msg.rfind("HELLO|MAP|", 0) == 0) {
                 const char* begin = "BEGIN\n";
-                send(s, begin, (int)strlen(begin), 0); // controller tells when to begin :contentReference[oaicite:9]{index=9}
+                send(s, begin, (int)strlen(begin), 0);
                 mapperBegun++;
             }
         }
         closesocket(s);
     }
 
-    // (For a full solution you’d keep connections open and process HEARTBEAT messages every k seconds.
-    // This minimal controller demonstrates the required architecture + BEGIN signal.)
-
-    // ------------- Tell stubs to SPAWN reducers -------------
+    // Tell stubs to SPAWN reducers
     for (int r = 0; r < numReducers; ++r) {
         auto [host,port] = chooseStub(r);
         std::ostringstream cmd;
@@ -198,23 +204,25 @@ int main(int argc, char** argv) {
         std::string resp;
         if (!tcpSendLine(host, port, cmd.str(), resp)) {
             std::cerr << "[controller] Stub unreachable for reducer.\n";
+            closesocket(hbListen);
+            WSACleanup();
             return 1;
         }
         std::cout << "[controller] Stub response: " << resp;
     }
 
-    // Accept reducer HELLO connections and send BEGIN
+    // Accept reducer HELLO and send BEGIN
     int reducerBegun = 0;
     while (reducerBegun < numReducers) {
         SOCKET s = accept(hbListen, nullptr, nullptr);
         if (s == INVALID_SOCKET) continue;
 
         char buf[1024];
-        int n = recv(s, buf, sizeof(buf)-1, 0);
+        int n = recv(s, buf, (int)sizeof(buf) - 1, 0);
         if (n > 0) {
-            buf[n]=0;
+            buf[n] = 0;
             std::string msg(buf);
-            if (msg.find("HELLO|REDUCE|") == 0) {
+            if (msg.rfind("HELLO|REDUCE|", 0) == 0) {
                 const char* begin = "BEGIN\n";
                 send(s, begin, (int)strlen(begin), 0);
                 reducerBegun++;
@@ -223,7 +231,7 @@ int main(int argc, char** argv) {
         closesocket(s);
     }
 
-    // SUCCESS marker (controller responsibility)
+    // Controller writes SUCCESS marker
     {
         std::ofstream out((outputDir / "SUCCESS").string(), std::ios::trunc | std::ios::binary);
     }

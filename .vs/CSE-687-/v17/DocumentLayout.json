@@ -1,32 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\phase3_main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:phase3_main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\include\\mr\\Interfaces.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:include\\mr\\Interfaces.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\mapper_worker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mapper_worker.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\FileManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FileManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\.vs\\launch.vs.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\launch.vs.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\CMakeSettings.json||{10608CD5-279C-4A28-BD5F-BA2CFCE06219}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeSettings.json||{10608CD5-279C-4A28-BD5F-BA2CFCE06219}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#4\\CSE-687-\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,84 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Interfaces.hpp",
-              "DocumentMoniker": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\include\\mr\\Interfaces.hpp",
-              "RelativeDocumentMoniker": "include\\mr\\Interfaces.hpp",
-              "ToolTip": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\include\\mr\\Interfaces.hpp",
-              "RelativeToolTip": "include\\mr\\Interfaces.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-02T02:01:06.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FileManager.cpp",
-              "DocumentMoniker": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\FileManager.cpp",
-              "RelativeDocumentMoniker": "FileManager.cpp",
-              "ToolTip": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\FileManager.cpp",
-              "RelativeToolTip": "FileManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-02T02:00:54.259Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "phase3_main.cpp",
-              "DocumentMoniker": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\phase3_main.cpp",
-              "RelativeDocumentMoniker": "phase3_main.cpp",
-              "ToolTip": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\phase3_main.cpp",
-              "RelativeToolTip": "phase3_main.cpp",
-              "ViewState": "AgIAAPQAAAAAAAAAAAAAACcAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-01T22:57:18.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "mapper_worker.cpp",
-              "DocumentMoniker": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\mapper_worker.cpp",
-              "RelativeDocumentMoniker": "mapper_worker.cpp",
-              "ToolTip": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\mapper_worker.cpp",
-              "RelativeToolTip": "mapper_worker.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-01T00:48:22.322Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CMakeSettings.json",
-              "DocumentMoniker": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\CMakeSettings.json",
-              "RelativeDocumentMoniker": "CMakeSettings.json",
-              "ToolTip": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\CMakeSettings.json",
-              "RelativeToolTip": "CMakeSettings.json",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-30T12:16:15.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "launch.vs.json",
-              "DocumentMoniker": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\.vs\\launch.vs.json",
-              "RelativeDocumentMoniker": ".vs\\launch.vs.json",
-              "ToolTip": "C:\\Users\\power\\Documents\\syracuse_university\\Object Oriented Design\\Project#3\\CSE-687-\\.vs\\launch.vs.json",
-              "RelativeToolTip": ".vs\\launch.vs.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-01T12:14:01.968Z",
-              "EditorCaption": ""
             }
           ]
         }

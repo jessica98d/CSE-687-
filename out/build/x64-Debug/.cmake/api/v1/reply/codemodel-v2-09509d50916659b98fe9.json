@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CSE_687_MapReduce",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Map::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Map-Release-f6136b19268028d903b6.json",
+					"name" : "Map",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Reduce::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Reduce-Release-7f335de3f9eba035e03e.json",
+					"name" : "Reduce",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mapper_worker::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mapper_worker-Release-e8fe1ae252a4c5486bd5.json",
+					"name" : "mapper_worker",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mapreduce_cli::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mapreduce_cli-Release-51db005f73b07f4cd0d0.json",
+					"name" : "mapreduce_cli",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mapreduce_gui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mapreduce_gui-Release-d7c6c323af2a88cd6740.json",
+					"name" : "mapreduce_gui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mapreduce_phase4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mapreduce_phase4-Release-dd0f56c32930dab8fb2f.json",
+					"name" : "mapreduce_phase4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "phase4_stub::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-phase4_stub-Release-ddbf790afbecfa0b2a87.json",
+					"name" : "phase4_stub",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "reducer_worker::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-reducer_worker-Release-a53dc3b3d7d84c665813.json",
+					"name" : "reducer_worker",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug",
+		"source" : "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

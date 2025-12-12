@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(mapreduce_gui LANGUAGES CXX)
+project(CSE_687_MapReduce LANGUAGES CXX)
 
 # ----------------------------------------------------------
 # Compiler settings
@@ -18,6 +18,11 @@ endif()
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # ----------------------------------------------------------
+# Runtime output folder for all executables / dlls
+# ----------------------------------------------------------
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+
+# ----------------------------------------------------------
 # Shared sources (core MapReduce implementation)
 # ----------------------------------------------------------
 set(SHARED_SOURCES
@@ -26,11 +31,6 @@ set(SHARED_SOURCES
     Reducer.cpp
     Workflow.cpp
 )
-
-# ----------------------------------------------------------
-# Runtime output folder for all executables / dlls
-# ----------------------------------------------------------
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 # ----------------------------------------------------------
 # GUI target (Phase 1)
@@ -117,74 +117,92 @@ copy_phase2_dlls(mapreduce_cli)
 copy_phase2_dlls(mapreduce_gui)
 
 # ==========================================================
-# Phase 3: Multi-process controller + worker executables
+# Phase 4: Networked controller + stub + workers
 # ==========================================================
-add_executable(mapreduce_phase3
-    phase3_main.cpp
-    ${SHARED_SOURCES}
+
+# Phase 4 Controller (Winsock) — ONLY builds phase4_controller.cpp
+add_executable(mapreduce_phase4
+    phase4_controller.cpp
 )
 
-target_include_directories(mapreduce_phase3 PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(mapreduce_phase4 PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
-if (MSVC)
-    target_compile_options(mapreduce_phase3 PRIVATE /W3 /MP /permissive-)
-endif()
-
-set_target_properties(mapreduce_phase3 PROPERTIES
+set_target_properties(mapreduce_phase4 PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
 
-# Mapper worker
+if (MSVC)
+    target_compile_options(mapreduce_phase4 PRIVATE /W3 /MP /permissive-)
+endif()
+
+# Mapper worker (uses core MapReduce classes)
 add_executable(mapper_worker
     mapper_worker.cpp
     ${SHARED_SOURCES}
 )
 
 target_include_directories(mapper_worker PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
 set_target_properties(mapper_worker PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
 
-# Reducer worker
+if (MSVC)
+    target_compile_options(mapper_worker PRIVATE /W3 /MP /permissive-)
+endif()
+
+# Reducer worker (uses core MapReduce classes)
 add_executable(reducer_worker
     reducer_worker.cpp
     ${SHARED_SOURCES}
 )
 
+# newly added
+# ----------------------------------------------------------
+# Silence MSVC getenv() deprecation warnings (Phase 4)
+# ----------------------------------------------------------
+if (MSVC)
+    target_compile_definitions(mapreduce_gui PRIVATE _CRT_SECURE_NO_WARNINGS)
+    target_compile_definitions(mapreduce_cli PRIVATE _CRT_SECURE_NO_WARNINGS)
+    target_compile_definitions(mapper_worker  PRIVATE _CRT_SECURE_NO_WARNINGS)
+    target_compile_definitions(reducer_worker PRIVATE _CRT_SECURE_NO_WARNINGS)
+endif()
+
+
 target_include_directories(reducer_worker PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
 set_target_properties(reducer_worker PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
 
-# ==========================================================
-# Phase 4: Stub + networked controller (Windows sockets)
-# ==========================================================
-# Controller executable (your provided phase4_controller.cpp)
-add_executable(mapreduce_phase4_controller
-    phase4_controller.cpp
-)
+if (MSVC)
+    target_compile_options(reducer_worker PRIVATE /W3 /MP /permissive-)
+endif()
 
-target_include_directories(mapreduce_phase4_controller PRIVATE ${CMAKE_SOURCE_DIR}/include)
-set_target_properties(mapreduce_phase4_controller PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
-)
-
-# Stub executable (needs stub.cpp)
+# Phase 4 Stub (Winsock) — builds stub.cpp
 add_executable(phase4_stub
     stub.cpp
 )
 
 target_include_directories(phase4_stub PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
 set_target_properties(phase4_stub PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
 
-# Link winsock on Windows
-if (WIN32)
-    target_link_libraries(mapreduce_phase4_controller PRIVATE ws2_32)
-    target_link_libraries(phase4_stub PRIVATE ws2_32)
+if (MSVC)
+    target_compile_options(phase4_stub PRIVATE /W3 /MP /permissive-)
 endif()
 
-# (Optional) Copy DLLs next to phase3/phase4 executables too, if they load plugins later
-# copy_phase2_dlls(mapreduce_phase3)
-# copy_phase2_dlls(mapreduce_phase4_controller)
+# Link winsock on Windows for controller + stub
+if (WIN32)
+    target_link_libraries(mapreduce_phase4 PRIVATE ws2_32)
+    target_link_libraries(phase4_stub     PRIVATE ws2_32)
+endif()
+
+# Convenience folders for phase4 controller runtime
+add_custom_command(TARGET mapreduce_phase4 POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:mapreduce_phase4>/sample_input"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:mapreduce_phase4>/temp"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:mapreduce_phase4>/output"
+)
