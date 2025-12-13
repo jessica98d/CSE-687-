@@ -93,7 +93,9 @@ cmake --build . --config Debug
 
 ## Running Phase 4
 
-### Terminal 1 – Start Stub
+1. These separate terminals are run sequentially/logically one after the other without closing them until after the end of the program.
+
+### Terminal 1 – Start Stub1
 
 ```powershell
 cd bin
@@ -102,7 +104,15 @@ phase4_stub.exe 5001 127.0.0.1 6001
 
 ---
 
-### Terminal 2 – Run Controller
+### Terminal 2 – Start Stub2
+
+```powershell
+cd bin
+phase4_stub.exe 5001 127.0.0.1 6001
+```
+---
+
+### Terminal 3 – Run Controller
 
 ```powershell
 cd bin
