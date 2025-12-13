@@ -147,4 +147,4 @@ cd bin
 ---
 
 ## Author
-Jessica, Michael Taylor
+Jessica, Michael, Taylor
