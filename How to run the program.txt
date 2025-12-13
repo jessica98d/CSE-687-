@@ -20,7 +20,13 @@ Terminal 3 (controller):
 
 with 1 stub:
 
-.\mapreduce_phase4.exe sample_input temp output 127.0.0.1:5001 2 2
+.\mapreduce_phase4.exe sample_input temp output 127.0.0.1:5001 2 2 
+
+OR 
+
+.\mapreduce_phase4.exe "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug\binsample_input" "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug\bin\temp" "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug\bin\output" 127.0.0.1:5001 2 2
+
+
 
 
 with 2 stubs:

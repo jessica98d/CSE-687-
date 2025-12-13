@@ -4,6 +4,10 @@
 // Example:
 //   mapreduce_phase4.exe sample_input temp output 127.0.0.1:5001 2 2
 
+#include <unordered_map>
+#include <chrono>
+#include <thread>
+
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
 #include <windows.h>
@@ -111,6 +115,72 @@ static SOCKET startHeartbeatServer(int port) {
     if (listen(listenSock, SOMAXCONN) == SOCKET_ERROR) return INVALID_SOCKET;
     return listenSock;
 }
+
+
+//Wait for reducer success markers
+static bool waitForReducerSuccessFiles(const fs::path& outputDir, int numReducers) {
+    // Wait until SUCCESS_r0 ... SUCCESS_r{R-1} exist
+    // (No hard timeout here; you can add one if you want)
+    while (true) {
+        bool all = true;
+        for (int r = 0; r < numReducers; ++r) {
+            fs::path p = outputDir / ("SUCCESS_r" + std::to_string(r));
+            if (!fs::exists(p)) { all = false; break; }
+        }
+        if (all) return true;
+        std::this_thread::sleep_for(std::chrono::milliseconds(200));
+    }
+}
+
+//Merge reducer outputs into word_counts.txt (aggregate + sort)
+static bool mergeReducerOutputs(const fs::path& outputDir, int numReducers) {
+    std::unordered_map<std::string, long long> agg;
+
+    for (int r = 0; r < numReducers; ++r) {
+        fs::path inPath = outputDir / ("word_counts_r" + std::to_string(r) + ".txt");
+        std::ifstream in(inPath.string());
+        if (!in) {
+            std::cerr << "[controller] Missing reducer output: " << inPath.string() << "\n";
+            return false;
+        }
+
+        std::string line;
+        while (std::getline(in, line)) {
+            if (line.empty()) continue;
+
+            // expect: word<TAB>count (or word count)
+            auto tab = line.find('\t');
+            if (tab == std::string::npos) tab = line.find(' ');
+            if (tab == std::string::npos) continue;
+
+            std::string w = line.substr(0, tab);
+            std::string cstr = line.substr(tab + 1);
+
+            try {
+                long long c = std::stoll(cstr);
+                if (!w.empty()) agg[w] += c;
+            } catch (...) {
+                // ignore malformed rows
+            }
+        }
+    }
+
+    std::vector<std::pair<std::string, long long>> rows(agg.begin(), agg.end());
+    std::sort(rows.begin(), rows.end(),
+              [](auto& a, auto& b){ return a.first < b.first; });
+
+    fs::path outPath = outputDir / "word_counts.txt";
+    std::ofstream out(outPath.string(), std::ios::trunc);
+    if (!out) return false;
+
+    for (auto& [w, c] : rows) {
+        out << w << "\t" << c << "\n";
+    }
+
+    std::cout << "[controller] Wrote merged output: " << outPath.string() << "\n";
+    return true;
+}
+
 
 // ------------------- main -------------------
 int main(int argc, char** argv) {
@@ -245,6 +315,19 @@ int main(int argc, char** argv) {
         }
         closesocket(s);
     }
+	
+	// Wait for reducers to finish (they create SUCCESS_rX)
+	waitForReducerSuccessFiles(outputDir, numReducers);
+
+	// Merge reducer outputs into word_counts.txt
+	if (!mergeReducerOutputs(outputDir, numReducers)) {
+		std::cerr << "[controller] Final merge failed.\n";
+		closesocket(hbListen);
+		WSACleanup();
+		return 1;
+}
+
+
 
     // SUCCESS marker (controller responsibility)
     {
