@@ -1,12 +1,12 @@
-// stub.cpp (Phase 4)
-// Usage: stub.exe <port> <controllerHost> <controllerPort>
-// Example: stub.exe 5001 127.0.0.1 6001
+// stub.cpp (Phase 4) - UPDATED
+// Usage: phase4_stub.exe <port> <controllerHost> <controllerPort>
+// Example: phase4_stub.exe 5001 127.0.0.1 6001
 //
 // Receives: SPAWN|MAP|m|R|tempDir|manifestPath
-//   -> runs: mapper_worker.exe m R manifestPath tempDir controllerHost controllerPort
+//   -> runs: mapper_worker.exe m R "manifestPath" "tempDir" controllerHost controllerPort
 //
 // Receives: SPAWN|REDUCE|r|M|tempDir|outputDir
-//   -> runs: reducer_worker.exe r tempDir outputDir controllerHost controllerPort
+//   -> runs: reducer_worker.exe r "tempDir" "outputDir" controllerHost controllerPort
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
@@ -17,7 +17,6 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include <algorithm>
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -37,6 +36,7 @@ static std::string recvLine(SOCKET s) {
         if (n <= 0) break;
         if (ch == '\n') break;
         out.push_back(ch);
+        if (out.size() > 8192) break; // safety
     }
     return out;
 }
@@ -54,7 +54,7 @@ static bool spawnProcess(const std::wstring& cmdLine) {
         mutableCmd.data(),
         nullptr, nullptr,
         FALSE,
-        CREATE_NO_WINDOW,   // stub stays quiet
+        CREATE_NO_WINDOW,   // stub stays quiet (no console window)
         nullptr,
         nullptr,
         &si,
@@ -62,7 +62,8 @@ static bool spawnProcess(const std::wstring& cmdLine) {
     );
 
     if (!ok) {
-        std::wcerr << L"[stub] CreateProcessW failed: " << GetLastError() << L"\n";
+        std::wcerr << L"[stub] CreateProcessW failed: " << GetLastError()
+                   << L"\n[stub] cmd: " << cmdLine << L"\n";
         return false;
     }
 
@@ -79,9 +80,14 @@ static std::wstring widen(const std::string& s) {
     return w;
 }
 
+// Quote helper for paths with spaces
+static std::wstring q(const std::wstring& s) {
+    return L"\"" + s + L"\"";
+}
+
 int main(int argc, char** argv) {
     if (argc < 4) {
-        std::cerr << "Usage: stub <port> <controllerHost> <controllerPort>\n";
+        std::cerr << "Usage: phase4_stub <port> <controllerHost> <controllerPort>\n";
         return 1;
     }
 
@@ -102,10 +108,14 @@ int main(int argc, char** argv) {
 
     if (bind(listenSock, (sockaddr*)&addr, sizeof(addr)) == SOCKET_ERROR) {
         std::cerr << "[stub] bind failed\n";
+        closesocket(listenSock);
+        WSACleanup();
         return 1;
     }
     if (listen(listenSock, SOMAXCONN) == SOCKET_ERROR) {
         std::cerr << "[stub] listen failed\n";
+        closesocket(listenSock);
+        WSACleanup();
         return 1;
     }
 
@@ -117,38 +127,40 @@ int main(int argc, char** argv) {
         if (s == INVALID_SOCKET) continue;
 
         std::string line = recvLine(s);
-        // expected: SPAWN|...
         auto parts = split(line, '|');
 
         bool ok = false;
+
         if (parts.size() >= 2 && parts[0] == "SPAWN") {
             if (parts[1] == "MAP" && parts.size() >= 6) {
                 // SPAWN|MAP|m|R|tempDir|manifestPath
                 std::string mapperId = parts[2];
-                std::string R = parts[3];
-                std::string tempDir = parts[4];
+                std::string R        = parts[3];
+                std::string tempDir  = parts[4];
                 std::string manifest = parts[5];
 
-                // mapper_worker.exe <mapperId> <numReducers> <manifestPath> <intermDir> <controllerHost> <controllerPort>
+                // mapper_worker.exe <mapperId> <numReducers> "<manifestPath>" "<intermDir>" <controllerHost> <controllerPort>
                 std::wstring cmd =
                     L"mapper_worker.exe " + widen(mapperId) + L" " + widen(R) + L" " +
-                    widen(manifest) + L" " + widen(tempDir) + L" " +
+                    q(widen(manifest)) + L" " + q(widen(tempDir)) + L" " +
                     widen(controllerHost) + L" " + widen(std::to_string(controllerPort));
 
+                std::wcout << L"[stub] SPAWN MAP cmd: " << cmd << L"\n";
                 ok = spawnProcess(cmd);
             }
             else if (parts[1] == "REDUCE" && parts.size() >= 6) {
                 // SPAWN|REDUCE|r|M|tempDir|outputDir
                 std::string reducerId = parts[2];
-                std::string tempDir = parts[4];
-                std::string outDir = parts[5];
+                std::string tempDir   = parts[4];
+                std::string outDir    = parts[5];
 
-                // reducer_worker.exe <reducerId> <intermDir> <outputDir> <controllerHost> <controllerPort>
+                // reducer_worker.exe <reducerId> "<intermDir>" "<outputDir>" <controllerHost> <controllerPort>
                 std::wstring cmd =
                     L"reducer_worker.exe " + widen(reducerId) + L" " +
-                    widen(tempDir) + L" " + widen(outDir) + L" " +
+                    q(widen(tempDir)) + L" " + q(widen(outDir)) + L" " +
                     widen(controllerHost) + L" " + widen(std::to_string(controllerPort));
 
+                std::wcout << L"[stub] SPAWN REDUCE cmd: " << cmd << L"\n";
                 ok = spawnProcess(cmd);
             }
         }

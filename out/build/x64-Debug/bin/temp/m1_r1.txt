@@ -1,0 +1,7 @@
+map	1
+reduce	1
+map	1
+reduce	1
+mapreduce	1
+word	1
+counts	1

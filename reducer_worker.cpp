@@ -47,17 +47,30 @@ static bool connectAndHandshakeReduce(const std::string& host, int port, int red
     }
     freeaddrinfo(res);
 
+    // ✅ PRINT #1: connected
+    std::cout << "[reducer_worker] connected to controller "
+              << host << ":" << port << "\n";
+
     // HELLO|REDUCE|<id>
     std::string hello = "HELLO|REDUCE|" + std::to_string(reducerId) + "\n";
     send(s, hello.c_str(), (int)hello.size(), 0);
 
     // wait BEGIN
     std::string resp = recvLine(s);
+
+    // ✅ PRINT #2: what we actually got
+    std::cout << "[reducer_worker] received from controller: '" << resp << "'\n";
+
     closesocket(s);
     WSACleanup();
 
-    return (resp.find("BEGIN") == 0);
+    if (resp.find("BEGIN") == 0) {
+        std::cout << "[reducer_worker] received BEGIN\n";
+        return true;
+    }
+    return false;
 }
+
 
 int main(int argc, char** argv) {
     // reducer_worker.exe <reducerId> <intermDir> <outputDir> <controllerHost> <controllerPort>
