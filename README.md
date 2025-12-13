@@ -93,7 +93,7 @@ cmake --build . --config Debug
 
 ## Running Phase 4
 
-### These separate terminals are run sequentially/logically one after the other without closing them until after the end of the program.
+1. These separate terminals are run sequentially/logically one after the other without closing them until after the end of the program.
 
 ### Terminal 1 – Start Stub1
 
