@@ -108,7 +108,7 @@ phase4_stub.exe 5001 127.0.0.1 6001
 
 ```powershell
 cd bin
-phase4_stub.exe 5001 127.0.0.1 6001
+phase4_stub.exe 5002 127.0.0.1 6001
 ```
 ---
 
@@ -116,7 +116,7 @@ phase4_stub.exe 5001 127.0.0.1 6001
 
 ```powershell
 cd bin
-mapreduce_phase4.exe sample_input temp output 127.0.0.1:5001 2 2
+.\mapreduce_phase4.exe sample_input temp output 127.0.0.1:5001 2 2
 ```
 
 ---
