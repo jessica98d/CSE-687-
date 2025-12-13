@@ -1,102 +1,140 @@
-# 📘 CSE-687 Project — Phase 3: Multi-Process MapReduce
+# MapReduce Framework – Phase 4 (Distributed Execution)
 
-This project implements a **multi-process MapReduce system** in C++ using the architecture defined in CSE-687 (Object-Oriented Design).  
-Phase 3 extends the Phase 2 single-process design by adding a **controller** and multiple **worker processes** for mappers and reducers.
+## Overview
 
-## 🚀 Features
+This project implements a multi-phase MapReduce framework in C++, culminating in **Phase 4**, which supports:
 
-### ✔ Multi-Process Architecture
-- A **controller** (`mapreduce_phase3.exe`) spawns:
-  - *N* mapper processes
-  - *R* reducer processes  
-- Mappers and reducers are run as separate executables:
-  - `mapper_worker.exe`
-  - `reducer_worker.exe`
+- Distributed execution using a **controller + stub** architecture
+- Multiple mapper and reducer worker processes
+- TCP-based coordination using **HELLO / BEGIN** handshakes
+- Deterministic partitioning and reduction
+- A final **merged output file** (`word_counts.txt`)
+- No hard-coded paths; all configuration via command-line arguments
 
-### ✔ Dynamic worker creation
-Workers receive command-line arguments:
-- Mapper: `mapperId`, `numReducers`, `inputDir`, `intermediateDir`
-- Reducer: `reducerId`, `intermediateDir`, `outputDir`
+This Phase 4 implementation builds directly on Phases 1–3 and satisfies all stated Phase 4 requirements.
 
-### ✔ Partitioned intermediate output
-Each mapper generates files of the form:
+---
+
+## Architecture (Phase 4)
 
 ```
-m<mapperId>_r<reducerId>.txt
++----------------------+
+| phase4_controller    |
+| (central coordinator)|
++----------+-----------+
+           |
+     TCP SPAWN / BEGIN
+           |
++----------+-----------+
+|      phase4_stub     |
+|  (process spawner)   |
++----------+-----------+
+           |
+   CreateProcess()
+           |
++----------+-----------+
+| mapper_worker /      |
+| reducer_worker       |
++----------------------+
 ```
 
-### ✔ Reducer aggregation
-Reducers read all matching partition files and compute final counts.
+---
 
-### ✔ Final output
-Reducers produce final results in the `output/` directory.  
-Example:
+## Build Output
+
+All executables are generated into:
 
 ```
-output/
-  word_counts.txt
-  SUCCESS.txt
+out/build/x64-Debug/bin/
 ```
 
-## 📂 Directory Structure
+### Executables
+
+| Executable | Description |
+|----------|-------------|
+| mapreduce_gui.exe | Phase 1 GUI |
+| mapreduce_cli.exe | Phase 1–2 CLI |
+| mapper_worker.exe | Mapper worker (Phase 3–4) |
+| reducer_worker.exe | Reducer worker (Phase 3–4) |
+| mapreduce_phase4.exe | Phase 4 controller |
+| phase4_stub.exe | Phase 4 stub (distributed spawner) |
+
+---
+
+## Runtime Directory Layout
 
 ```
 bin/
-  mapreduce_phase3.exe
-  mapper_worker.exe
-  reducer_worker.exe
-  sample_input/
-  intermediate/
-  output/
+├── sample_input/        # Input text files
+├── temp/                # Intermediate mapper output (mX_rY.txt)
+├── output/
+│   ├── word_counts_r0.txt
+│   ├── word_counts_r1.txt
+│   ├── word_counts.txt   # FINAL MERGED OUTPUT
+│   ├── SUCCESS_r0
+│   ├── SUCCESS_r1
+│   └── SUCCESS
 ```
 
-## 🛠️ Build Instructions (CMake + Visual Studio)
+---
 
-Build using Visual Studio 2022:
-1. Open the CMake project folder.
-2. Configure and build using **x64-Debug** or **x64-Release**.
-3. Executables appear under:
+## Build Instructions (Windows)
 
-```
-out/build/<config>/bin/
-```
+### Clean Build (Recommended)
 
-## ▶️ Running the Program
-
-From inside the **bin** directory:
-
-```bash
-mapreduce_phase3.exe <numMappers> <numReducers> <inputDir> <intermediateDir> <outputDir>
+```powershell
+cd out/build/x64-Debug
+rmdir /s /q *
+cmake ../..
+cmake --build . --config Debug
 ```
 
-### Example:
+---
 
-```bash
-mapreduce_phase3.exe 3 2 sample_input intermediate output
+## Running Phase 4
+
+### Terminal 1 – Start Stub
+
+```powershell
+cd bin
+phase4_stub.exe 5001 127.0.0.1 6001
 ```
 
-## 📝 Input Requirements
+---
 
-- Input files should be `.txt` (lowercase).
-- Place them inside the folder provided as `<inputDir>`.
+### Terminal 2 – Run Controller
 
-## 📜 Intermediate File Format
-
-Tab-separated key-value pairs:
-
-```
-word    1
-word    1
-hello   1
+```powershell
+cd bin
+mapreduce_phase4.exe sample_input temp output 127.0.0.1:5001 2 2
 ```
 
-## 📦 Output Files
+---
 
-```
-word_counts.txt   # aggregated results
-SUCCESS.txt       # completion flag
-```
+## Execution Flow
 
-## 👤 Author
-**Jessica, Michael and Taylor**
+1. Controller partitions input files across mappers
+2. Controller instructs stubs to spawn mapper workers
+3. Mapper workers wait for BEGIN, then emit partitioned intermediate files
+4. Controller instructs stubs to spawn reducer workers
+5. Reducers process only their assigned partitions
+6. Reducers write `word_counts_rX.txt` and `SUCCESS_rX`
+7. Controller merges reducer outputs into `word_counts.txt`
+8. Controller writes global `SUCCESS` marker
 
+---
+
+## Phase 4 Compliance
+
+✔ Distributed controller/stub design  
+✔ TCP-based worker coordination  
+✔ Multiple mapper and reducer processes  
+✔ No shared-memory or hard-coded paths  
+✔ Correct partitioning and reduction  
+✔ Final merged output  
+✔ SUCCESS markers  
+
+---
+
+## Author
+Jessica, Michael Taylor

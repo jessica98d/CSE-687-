@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: mapreduce_gui
+# Project: CSE_687_MapReduce
 # Configurations: Release
 # =============================================================================
 
@@ -39,7 +39,7 @@ include CMakeFiles\rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\out\build\x64-Debug\
+cmake_ninja_workdir = C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\out\build\x64-Debug\
 # =============================================================================
 # Object build statements for EXECUTABLE target mapreduce_gui
 
@@ -49,46 +49,46 @@ cmake_ninja_workdir = C$:\Users\power\Documents\syracuse_university\Object$ Orie
 
 build cmake_object_order_depends_target_mapreduce_gui: phony || cmake_object_order_depends_target_Map cmake_object_order_depends_target_Reduce
 
-build CMakeFiles\mapreduce_gui.dir\GuiApp.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\GuiApp.cpp || cmake_object_order_depends_target_mapreduce_gui
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_gui.dir\GuiApp.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\GuiApp.cpp || cmake_object_order_depends_target_mapreduce_gui
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_gui.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_gui.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_gui.dir\
   TARGET_PDB = bin\mapreduce_gui.pdb
 
-build CMakeFiles\mapreduce_gui.dir\FileManager.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_mapreduce_gui
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_gui.dir\FileManager.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_mapreduce_gui
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_gui.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_gui.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_gui.dir\
   TARGET_PDB = bin\mapreduce_gui.pdb
 
-build CMakeFiles\mapreduce_gui.dir\Mapper.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_mapreduce_gui
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_gui.dir\Mapper.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_mapreduce_gui
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_gui.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_gui.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_gui.dir\
   TARGET_PDB = bin\mapreduce_gui.pdb
 
-build CMakeFiles\mapreduce_gui.dir\Reducer.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_mapreduce_gui
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_gui.dir\Reducer.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_mapreduce_gui
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_gui.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_gui.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_gui.dir\
   TARGET_PDB = bin\mapreduce_gui.pdb
 
-build CMakeFiles\mapreduce_gui.dir\Workflow.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_mapreduce_gui
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_gui.dir\Workflow.cpp.obj: CXX_COMPILER__mapreduce_gui_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_mapreduce_gui
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_gui.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_gui.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_gui.dir\
@@ -107,7 +107,7 @@ build bin\mapreduce_gui.exe: CXX_EXECUTABLE_LINKER__mapreduce_gui_Release CMakeF
   LINK_FLAGS = /machine:x64 /INCREMENTAL:NO /subsystem:windows
   LINK_LIBRARIES = user32.lib  gdi32.lib  comdlg32.lib  shell32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\mapreduce_gui.dir
-  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/Map.dll" "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/Reduce.dll" "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/" && cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/sample_input" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/temp" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/output""
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/sample_input" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/temp" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/output" && cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/Map.dll" "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/Reduce.dll" "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/""
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_gui.dir\
   TARGET_FILE = bin\mapreduce_gui.exe
@@ -123,46 +123,46 @@ build bin\mapreduce_gui.exe: CXX_EXECUTABLE_LINKER__mapreduce_gui_Release CMakeF
 
 build cmake_object_order_depends_target_mapreduce_cli: phony || cmake_object_order_depends_target_Map cmake_object_order_depends_target_Reduce
 
-build CMakeFiles\mapreduce_cli.dir\main_cli.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\main_cli.cpp || cmake_object_order_depends_target_mapreduce_cli
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_cli.dir\main_cli.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\main_cli.cpp || cmake_object_order_depends_target_mapreduce_cli
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_cli.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_cli.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_cli.dir\
   TARGET_PDB = bin\mapreduce_cli.pdb
 
-build CMakeFiles\mapreduce_cli.dir\FileManager.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_mapreduce_cli
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_cli.dir\FileManager.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_mapreduce_cli
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_cli.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_cli.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_cli.dir\
   TARGET_PDB = bin\mapreduce_cli.pdb
 
-build CMakeFiles\mapreduce_cli.dir\Mapper.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_mapreduce_cli
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_cli.dir\Mapper.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_mapreduce_cli
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_cli.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_cli.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_cli.dir\
   TARGET_PDB = bin\mapreduce_cli.pdb
 
-build CMakeFiles\mapreduce_cli.dir\Reducer.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_mapreduce_cli
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_cli.dir\Reducer.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_mapreduce_cli
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_cli.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_cli.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_cli.dir\
   TARGET_PDB = bin\mapreduce_cli.pdb
 
-build CMakeFiles\mapreduce_cli.dir\Workflow.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_mapreduce_cli
-  DEFINES = -DUNICODE -D_UNICODE
+build CMakeFiles\mapreduce_cli.dir\Workflow.cpp.obj: CXX_COMPILER__mapreduce_cli_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_mapreduce_cli
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapreduce_cli.dir
   OBJECT_FILE_DIR = CMakeFiles\mapreduce_cli.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_cli.dir\
@@ -181,7 +181,7 @@ build bin\mapreduce_cli.exe: CXX_EXECUTABLE_LINKER__mapreduce_cli_Release CMakeF
   LINK_FLAGS = /machine:x64 /INCREMENTAL:NO /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
   OBJECT_DIR = CMakeFiles\mapreduce_cli.dir
-  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/Map.dll" "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/Reduce.dll" "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/" && cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/sample_input" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/temp" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug/bin/output""
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/sample_input" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/temp" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/output" && cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/Map.dll" "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/Reduce.dll" "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/""
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = CMakeFiles\mapreduce_cli.dir\
   TARGET_FILE = bin\mapreduce_cli.exe
@@ -197,10 +197,10 @@ build bin\mapreduce_cli.exe: CXX_EXECUTABLE_LINKER__mapreduce_cli_Release CMakeF
 
 build cmake_object_order_depends_target_Map: phony || .
 
-build CMakeFiles\Map.dir\dlls\MapDLL.cpp.obj: CXX_COMPILER__Map_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\dlls\MapDLL.cpp || cmake_object_order_depends_target_Map
+build CMakeFiles\Map.dir\dlls\MapDLL.cpp.obj: CXX_COMPILER__Map_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\dlls\MapDLL.cpp || cmake_object_order_depends_target_Map
   DEFINES = -DMap_EXPORTS -DUNICODE -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\Map.dir
   OBJECT_FILE_DIR = CMakeFiles\Map.dir\dlls
   TARGET_COMPILE_PDB = CMakeFiles\Map.dir\
@@ -236,10 +236,10 @@ build bin\Map.dll Map.lib: CXX_SHARED_LIBRARY_LINKER__Map_Release CMakeFiles\Map
 
 build cmake_object_order_depends_target_Reduce: phony || .
 
-build CMakeFiles\Reduce.dir\dlls\ReduceDLL.cpp.obj: CXX_COMPILER__Reduce_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\dlls\ReduceDLL.cpp || cmake_object_order_depends_target_Reduce
+build CMakeFiles\Reduce.dir\dlls\ReduceDLL.cpp.obj: CXX_COMPILER__Reduce_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\dlls\ReduceDLL.cpp || cmake_object_order_depends_target_Reduce
   DEFINES = -DReduce_EXPORTS -DUNICODE -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\Reduce.dir
   OBJECT_FILE_DIR = CMakeFiles\Reduce.dir\dlls
   TARGET_COMPILE_PDB = CMakeFiles\Reduce.dir\
@@ -267,78 +267,42 @@ build bin\Reduce.dll Reduce.lib: CXX_SHARED_LIBRARY_LINKER__Reduce_Release CMake
   TARGET_PDB = bin\Reduce.pdb
 
 # =============================================================================
-# Object build statements for EXECUTABLE target mapreduce_phase3
+# Object build statements for EXECUTABLE target mapreduce_phase4
 
 
 #############################################
-# Order-only phony target for mapreduce_phase3
+# Order-only phony target for mapreduce_phase4
 
-build cmake_object_order_depends_target_mapreduce_phase3: phony || .
+build cmake_object_order_depends_target_mapreduce_phase4: phony || .
 
-build CMakeFiles\mapreduce_phase3.dir\phase3_main.cpp.obj: CXX_COMPILER__mapreduce_phase3_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\phase3_main.cpp || cmake_object_order_depends_target_mapreduce_phase3
+build CMakeFiles\mapreduce_phase4.dir\phase4_controller.cpp.obj: CXX_COMPILER__mapreduce_phase4_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\phase4_controller.cpp || cmake_object_order_depends_target_mapreduce_phase4
   DEFINES = -DUNICODE -D_UNICODE
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
-  OBJECT_DIR = CMakeFiles\mapreduce_phase3.dir
-  OBJECT_FILE_DIR = CMakeFiles\mapreduce_phase3.dir
-  TARGET_COMPILE_PDB = CMakeFiles\mapreduce_phase3.dir\
-  TARGET_PDB = bin\mapreduce_phase3.pdb
-
-build CMakeFiles\mapreduce_phase3.dir\FileManager.cpp.obj: CXX_COMPILER__mapreduce_phase3_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_mapreduce_phase3
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
-  OBJECT_DIR = CMakeFiles\mapreduce_phase3.dir
-  OBJECT_FILE_DIR = CMakeFiles\mapreduce_phase3.dir
-  TARGET_COMPILE_PDB = CMakeFiles\mapreduce_phase3.dir\
-  TARGET_PDB = bin\mapreduce_phase3.pdb
-
-build CMakeFiles\mapreduce_phase3.dir\Mapper.cpp.obj: CXX_COMPILER__mapreduce_phase3_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_mapreduce_phase3
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
-  OBJECT_DIR = CMakeFiles\mapreduce_phase3.dir
-  OBJECT_FILE_DIR = CMakeFiles\mapreduce_phase3.dir
-  TARGET_COMPILE_PDB = CMakeFiles\mapreduce_phase3.dir\
-  TARGET_PDB = bin\mapreduce_phase3.pdb
-
-build CMakeFiles\mapreduce_phase3.dir\Reducer.cpp.obj: CXX_COMPILER__mapreduce_phase3_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_mapreduce_phase3
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
-  OBJECT_DIR = CMakeFiles\mapreduce_phase3.dir
-  OBJECT_FILE_DIR = CMakeFiles\mapreduce_phase3.dir
-  TARGET_COMPILE_PDB = CMakeFiles\mapreduce_phase3.dir\
-  TARGET_PDB = bin\mapreduce_phase3.pdb
-
-build CMakeFiles\mapreduce_phase3.dir\Workflow.cpp.obj: CXX_COMPILER__mapreduce_phase3_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_mapreduce_phase3
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
-  OBJECT_DIR = CMakeFiles\mapreduce_phase3.dir
-  OBJECT_FILE_DIR = CMakeFiles\mapreduce_phase3.dir
-  TARGET_COMPILE_PDB = CMakeFiles\mapreduce_phase3.dir\
-  TARGET_PDB = bin\mapreduce_phase3.pdb
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
+  OBJECT_DIR = CMakeFiles\mapreduce_phase4.dir
+  OBJECT_FILE_DIR = CMakeFiles\mapreduce_phase4.dir
+  TARGET_COMPILE_PDB = CMakeFiles\mapreduce_phase4.dir\
+  TARGET_PDB = bin\mapreduce_phase4.pdb
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target mapreduce_phase3
+# Link build statements for EXECUTABLE target mapreduce_phase4
 
 
 #############################################
-# Link the executable bin\mapreduce_phase3.exe
+# Link the executable bin\mapreduce_phase4.exe
 
-build bin\mapreduce_phase3.exe: CXX_EXECUTABLE_LINKER__mapreduce_phase3_Release CMakeFiles\mapreduce_phase3.dir\phase3_main.cpp.obj CMakeFiles\mapreduce_phase3.dir\FileManager.cpp.obj CMakeFiles\mapreduce_phase3.dir\Mapper.cpp.obj CMakeFiles\mapreduce_phase3.dir\Reducer.cpp.obj CMakeFiles\mapreduce_phase3.dir\Workflow.cpp.obj
+build bin\mapreduce_phase4.exe: CXX_EXECUTABLE_LINKER__mapreduce_phase4_Release CMakeFiles\mapreduce_phase4.dir\phase4_controller.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD
   LINK_FLAGS = /machine:x64 /INCREMENTAL:NO /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\mapreduce_phase3.dir
-  POST_BUILD = cd .
+  LINK_LIBRARIES = ws2_32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\mapreduce_phase4.dir
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/sample_input" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/temp" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory "C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug/bin/output""
   PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\mapreduce_phase3.dir\
-  TARGET_FILE = bin\mapreduce_phase3.exe
-  TARGET_IMPLIB = mapreduce_phase3.lib
-  TARGET_PDB = bin\mapreduce_phase3.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\mapreduce_phase4.dir\
+  TARGET_FILE = bin\mapreduce_phase4.exe
+  TARGET_IMPLIB = mapreduce_phase4.lib
+  TARGET_PDB = bin\mapreduce_phase4.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target mapper_worker
@@ -349,46 +313,46 @@ build bin\mapreduce_phase3.exe: CXX_EXECUTABLE_LINKER__mapreduce_phase3_Release 
 
 build cmake_object_order_depends_target_mapper_worker: phony || .
 
-build CMakeFiles\mapper_worker.dir\mapper_worker.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\mapper_worker.cpp || cmake_object_order_depends_target_mapper_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\mapper_worker.dir\mapper_worker.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\mapper_worker.cpp || cmake_object_order_depends_target_mapper_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapper_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\mapper_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapper_worker.dir\
   TARGET_PDB = bin\mapper_worker.pdb
 
-build CMakeFiles\mapper_worker.dir\FileManager.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_mapper_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\mapper_worker.dir\FileManager.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_mapper_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapper_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\mapper_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapper_worker.dir\
   TARGET_PDB = bin\mapper_worker.pdb
 
-build CMakeFiles\mapper_worker.dir\Mapper.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_mapper_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\mapper_worker.dir\Mapper.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_mapper_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapper_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\mapper_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapper_worker.dir\
   TARGET_PDB = bin\mapper_worker.pdb
 
-build CMakeFiles\mapper_worker.dir\Reducer.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_mapper_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\mapper_worker.dir\Reducer.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_mapper_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapper_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\mapper_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapper_worker.dir\
   TARGET_PDB = bin\mapper_worker.pdb
 
-build CMakeFiles\mapper_worker.dir\Workflow.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_mapper_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\mapper_worker.dir\Workflow.cpp.obj: CXX_COMPILER__mapper_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_mapper_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\mapper_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\mapper_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\mapper_worker.dir\
@@ -423,46 +387,46 @@ build bin\mapper_worker.exe: CXX_EXECUTABLE_LINKER__mapper_worker_Release CMakeF
 
 build cmake_object_order_depends_target_reducer_worker: phony || .
 
-build CMakeFiles\reducer_worker.dir\reducer_worker.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\reducer_worker.cpp || cmake_object_order_depends_target_reducer_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\reducer_worker.dir\reducer_worker.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\reducer_worker.cpp || cmake_object_order_depends_target_reducer_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\reducer_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\reducer_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\reducer_worker.dir\
   TARGET_PDB = bin\reducer_worker.pdb
 
-build CMakeFiles\reducer_worker.dir\FileManager.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_reducer_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\reducer_worker.dir\FileManager.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\FileManager.cpp || cmake_object_order_depends_target_reducer_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\reducer_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\reducer_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\reducer_worker.dir\
   TARGET_PDB = bin\reducer_worker.pdb
 
-build CMakeFiles\reducer_worker.dir\Mapper.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_reducer_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\reducer_worker.dir\Mapper.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Mapper.cpp || cmake_object_order_depends_target_reducer_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\reducer_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\reducer_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\reducer_worker.dir\
   TARGET_PDB = bin\reducer_worker.pdb
 
-build CMakeFiles\reducer_worker.dir\Reducer.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_reducer_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\reducer_worker.dir\Reducer.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Reducer.cpp || cmake_object_order_depends_target_reducer_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\reducer_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\reducer_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\reducer_worker.dir\
   TARGET_PDB = bin\reducer_worker.pdb
 
-build CMakeFiles\reducer_worker.dir\Workflow.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_reducer_worker
-  DEFINES = -DUNICODE -D_UNICODE
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD
-  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\include"
+build CMakeFiles\reducer_worker.dir\Workflow.cpp.obj: CXX_COMPILER__reducer_worker_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\Workflow.cpp || cmake_object_order_depends_target_reducer_worker
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
   OBJECT_DIR = CMakeFiles\reducer_worker.dir
   OBJECT_FILE_DIR = CMakeFiles\reducer_worker.dir
   TARGET_COMPILE_PDB = CMakeFiles\reducer_worker.dir\
@@ -488,12 +452,50 @@ build bin\reducer_worker.exe: CXX_EXECUTABLE_LINKER__reducer_worker_Release CMak
   TARGET_IMPLIB = reducer_worker.lib
   TARGET_PDB = bin\reducer_worker.pdb
 
+# =============================================================================
+# Object build statements for EXECUTABLE target phase4_stub
+
+
+#############################################
+# Order-only phony target for phase4_stub
+
+build cmake_object_order_depends_target_phase4_stub: phony || .
+
+build CMakeFiles\phase4_stub.dir\stub.cpp.obj: CXX_COMPILER__phase4_stub_unscanned_Release C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\stub.cpp || cmake_object_order_depends_target_phase4_stub
+  DEFINES = -DUNICODE -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -std:c++17 -MD /W3 /MP /permissive-
+  INCLUDES = -I"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\include"
+  OBJECT_DIR = CMakeFiles\phase4_stub.dir
+  OBJECT_FILE_DIR = CMakeFiles\phase4_stub.dir
+  TARGET_COMPILE_PDB = CMakeFiles\phase4_stub.dir\
+  TARGET_PDB = bin\phase4_stub.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target phase4_stub
+
+
+#############################################
+# Link the executable bin\phase4_stub.exe
+
+build bin\phase4_stub.exe: CXX_EXECUTABLE_LINKER__phase4_stub_Release CMakeFiles\phase4_stub.dir\stub.cpp.obj
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /O2 /Ob2 /DNDEBUG -MD
+  LINK_FLAGS = /machine:x64 /INCREMENTAL:NO /subsystem:console
+  LINK_LIBRARIES = ws2_32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\phase4_stub.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\phase4_stub.dir\
+  TARGET_FILE = bin\phase4_stub.exe
+  TARGET_IMPLIB = phase4_stub.lib
+  TARGET_PDB = bin\phase4_stub.pdb
+
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -504,7 +506,7 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -S"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-" -B"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#3\CSE-687-\out\build\x64-Debug""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\out\build\x64-Debug" && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -S"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-" -B"C:\Users\power\Documents\syracuse_university\Object Oriented Design\Project#4\CSE-687-\out\build\x64-Debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -534,9 +536,13 @@ build mapreduce_gui: phony bin\mapreduce_gui.exe
 
 build mapreduce_gui.exe: phony bin\mapreduce_gui.exe
 
-build mapreduce_phase3: phony bin\mapreduce_phase3.exe
+build mapreduce_phase4: phony bin\mapreduce_phase4.exe
 
-build mapreduce_phase3.exe: phony bin\mapreduce_phase3.exe
+build mapreduce_phase4.exe: phony bin\mapreduce_phase4.exe
+
+build phase4_stub: phony bin\phase4_stub.exe
+
+build phase4_stub.exe: phony bin\phase4_stub.exe
 
 build reducer_worker: phony bin\reducer_worker.exe
 
@@ -548,9 +554,9 @@ build reducer_worker.exe: phony bin\reducer_worker.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#3/CSE-687-/out/build/x64-Debug
+# Folder: C:/Users/power/Documents/syracuse_university/Object Oriented Design/Project#4/CSE-687-/out/build/x64-Debug
 
-build all: phony bin\mapreduce_gui.exe bin\mapreduce_cli.exe bin\Map.dll bin\Reduce.dll bin\mapreduce_phase3.exe bin\mapper_worker.exe bin\reducer_worker.exe
+build all: phony bin\mapreduce_gui.exe bin\mapreduce_cli.exe bin\Map.dll bin\Reduce.dll bin\mapreduce_phase4.exe bin\mapper_worker.exe bin\reducer_worker.exe bin\phase4_stub.exe
 
 # =============================================================================
 # Built-in targets
@@ -559,14 +565,14 @@ build all: phony bin\mapreduce_gui.exe bin\mapreduce_cli.exe bin\Map.dll bin\Red
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\CMakeLists.txt CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXCompiler.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXCompilerABI.cpp C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCompilerIdDetection.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCXXCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerABI.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerId.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerSupport.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineRCCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeFindBinUtils.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeParseImplicitIncludeInfo.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeParseImplicitLinkInfo.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeParseLibraryArchitecture.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCCompiler.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystem.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeTestCXXCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeTestCompilerCommon.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeTestRCCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\ADSP-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\ARMCC-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\ARMClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\AppleClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Borland-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompilerInternal.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Cray-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CrayClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Embarcadero-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Fujitsu-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\GHS-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\HP-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\IAR-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Intel-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX-CXXImportStd.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\NVHPC-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\NVIDIA-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\OrangeC-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\PGI-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\PathScale-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\SCO-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\TI-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\TIClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Tasking-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Watcom-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\XL-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeDetermineLinkerId.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\FeatureTesting.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Determine-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\CMakeLists.txt CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#3\CSE-687-\CMakeLists.txt CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake: phony
+build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXCompiler.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXCompilerABI.cpp C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeCompilerIdDetection.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCXXCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerABI.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerId.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerSupport.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineRCCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeDetermineSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeFindBinUtils.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeParseImplicitIncludeInfo.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeParseImplicitLinkInfo.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeParseLibraryArchitecture.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCCompiler.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystem.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeTestCXXCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeTestCompilerCommon.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\CMakeTestRCCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\ADSP-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\ARMCC-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\ARMClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\AppleClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Borland-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompilerInternal.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Cray-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\CrayClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Embarcadero-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Fujitsu-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\GHS-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\HP-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\IAR-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Intel-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX-CXXImportStd.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\NVHPC-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\NVIDIA-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\OrangeC-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\PGI-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\PathScale-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\SCO-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\TI-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\TIClang-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Tasking-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\Watcom-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\XL-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\CMakeDetermineLinkerId.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Internal\FeatureTesting.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Determine-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake C$:\Users\power\Documents\syracuse_university\Object$ Oriented$ Design\Project#4\CSE-687-\CMakeLists.txt CMakeCache.txt CMakeFiles\3.31.6-msvc6\CMakeCXXCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeRCCompiler.cmake CMakeFiles\3.31.6-msvc6\CMakeSystem.cmake: phony
 
 
 #############################################
